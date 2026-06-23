@@ -111,27 +111,30 @@ nav a:hover {
 /* ==========================================
    メインビジュアル
    ========================================== */
-main-visual {
-    position: relative; /* 💡 文字を動画の上に重ねるための基準点 */
+/* ==========================================
+   メインビジュアル（全画面動画背景 ＆ 文字重ね完全版）
+   ========================================== */
+.main-visual {
+    position: relative;
     width: 100%;
-    height: 80vh; /* 画面の高さの8割。お好みの高さに調整可能です */
+    height: 100vh; /* 💡 画面の高さ100%いっぱいに広げます */
     overflow: hidden;
-    background-color: #000; /* 動画が読み込まれる前の黒背景 */
+    background-color: #000;
 }
 
-/* 💡 動画を背景として全体に広げる設定 */
+/* 💡 動画を画面全体を覆う背景として固定する設定 */
 .main-visual video {
     position: absolute;
     top: 50%;
     left: 50%;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 縦横比を保ったまま綺麗に全体を覆うおまじない */
+    object-fit: cover; /* 縦横比を保ちながら画面いっぱいに敷き詰めます */
     transform: translate(-50%, -50%);
-    z-index: 1; /* 動画を下に */
+    z-index: 1;
 }
 
-/* 💡 動画の上に半透明の黒いアミをかけて文字を見やすくする（もしあれば） */
+/* 💡 動画の上に半透明の黒アミを敷き、文字の視認性を最優先にします */
 .main-visual::after {
     content: '';
     position: absolute;
@@ -139,26 +142,34 @@ main-visual {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 40%の黒アミ */
+    background: rgba(0, 0, 0, 0.5); /* 黒アミを50%にして文字をさらにクッキリに */
     z-index: 2;
 }
 
-/* 💡 文字エリアを動画の真上に最前面で配置する設定 */
+/* 💡 文字エリアを動画の真上に配置 */
 .mv-content {
     position: absolute;
     top: 50%;
-    left: 10%; /* 左側から10%の位置に配置 */
+    left: 10%;
     transform: translateY(-50%);
-    z-index: 3; /* 動画や黒アミよりも一番上に重ねる */
+    z-index: 3; /* 最前面 */
     color: #ffffff;
-    max-width: 600px;
+    max-width: 800px; /* 文字が詰まらないように幅を広げました */
 }
 
 .mv-content h1 {
-    font-size: 48px; /* 文字の大きさ */
+    font-size: 52px; /* ド迫力な大文字に設定 */
     font-weight: bold;
-    line-height: 1.5;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.7); /* 文字の後ろに影を入れてクッキリさせます */
+    line-height: 1.4;
+    text-shadow: 2px 2px 15px rgba(0,0,0,0.9); /* 文字の影を強くして読みやすく */
+}
+
+/* 💡 下のコンテンツ（OUR MISSION以降）の初期位置調整 */
+.concept, .services, #contact {
+    position: relative;
+    z-index: 10;
+    background-color: #111111;
+    padding-top: 80px; /* 次のコンテンツとの間に綺麗な余白を作ります */
 }
 
 .main-visual p {
