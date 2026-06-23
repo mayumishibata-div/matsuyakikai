@@ -1,0 +1,555 @@
+html {
+    scroll-behavior: smooth; /* 💡 これでページ内スクロールが滑らかになります */
+}
+
+/* ==========================================
+   共通設定（リセットと基本スタイル）
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212; /* 深い黒 */
+    color: #f5f5f5; /* 薄いグレーの文字 */
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 見出しの共通デザイン（オレンジの左線） */
+.section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    margin-bottom: 40px;
+    border-left: 5px solid #ff9900; /* ロゴに合わせたオレンジ */
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+
+/* ==========================================
+   ヘッダー
+   ========================================== */
+header {
+    background-color: rgba(26, 26, 26, 0.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #2d3748;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px; /* ロゴサイズに合わせて少し上下をスリムに */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ロゴ画像のサイズ調整 */
+.logo-img {
+    height: 45px; /* ヘッダーに綺麗に収まる高さ */
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+nav a {
+    color: #cbd5e0;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff9900;
+}
+
+/* お問い合わせボタン */
+.btn-nav {
+    background-color: #ff9900; /* オレンジ */
+    color: #121212 !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+}
+
+.btn-nav:hover {
+    background-color: #ffffff;
+}
+
+/* ==========================================
+   メインビジュアル
+   ========================================== */
+.main-visual {
+    height: 80vh;
+    background-color: #1a1a1a;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/main.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.mv-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.main-visual h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.main-visual p {
+    font-family: 'Oswald', sans-serif;
+    color: #ff9900;
+    font-size: 20px;
+    letter-spacing: 0.15em;
+}
+
+/* ==========================================
+   コンセプト
+   ========================================== */
+.concept {
+    padding: 100px 0;
+    background-color: #1a1a1a;
+    text-align: center;
+}
+
+.concept .section-title {
+    display: inline-block;
+    border-left: none;
+    border-bottom: 3px solid #ff9900;
+    padding-left: 0;
+    padding-bottom: 10px;
+}
+
+.concept-lead {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.concept-text {
+    max-width: 800px;
+    margin: 0 auto;
+    color: #cbd5e0;
+    font-size: 17px;
+}
+
+/* ==========================================
+   事業内容（SERVICES）カードの配置調整
+   ========================================== */
+.service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service-card {
+    background-color: #1a1a1a;
+    border: 1px solid #2d3748;
+    padding: 40px 20px;
+    text-align: center;
+    transition: all 0.3s;
+    width: calc(25% - 15px);
+    min-width: 250px;
+    text-decoration: none; /* 💡 リンクのアンダーラインを消す */
+    cursor: pointer;       /* 💡 マウスを乗せたら指マークにする */
+}
+
+.service-card:hover {
+    border-color: #ff9900;
+    transform: translateY(-5px);
+    background-color: #222222; /* ホバー時に少し明るくしてクリックできる感を出します */
+}
+
+.service-card i {
+    font-size: 40px;
+    color: #ff9900;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* ==========================================
+   会社概要（テーブル）
+   ========================================== */
+.about {
+    padding: 100px 0;
+    background-color: #1a1a1a;
+}
+
+.profile-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.profile-table th, .profile-table td {
+    padding: 20px;
+    border-bottom: 1px solid #2d3748;
+    text-align: left;
+}
+
+.profile-table th {
+    color: #ff9900;
+    font-weight: 700;
+    width: 30%;
+}
+
+.profile-table td {
+    color: #ffffff;
+}
+
+/* ==========================================
+   【新設】事業内容の詳細エリア（SERVICE DETAILS）
+   ========================================== */
+.service-details {
+    padding: 100px 0;
+    background-color: #121212;
+}
+
+.detail-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* 詳細項目同士の間隔 */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.detail-item {
+    background-color: #1a1a1a;
+    border: 1px solid #2d3748;
+    padding: 35px;
+    border-radius: 4px;
+    /* ページ内リンクで飛んできたときにヘッダー（固定）に被らないようにする調整 */
+    scroll-margin-top: 100px; 
+    transition: border-color 0.4s;
+}
+
+/* ページ内リンクでターゲットになった項目を一瞬強調する（親切設計） */
+.detail-item:target {
+    border-color: #ff9900;
+}
+
+/* 💡 【新設】詳細ブロック自体が直接クリック（フォーカス）されたときもオレンジにする */
+.detail-item:focus {
+    border-color: #ff9900; /* ボーダーをオレンジにする */
+    background-color: #222222; /* 背景も少しだけ明るくして選択感を出す */
+    outline: none; /* ブラウザ標準の青い枠線を消す */
+}
+
+.detail-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #2d3748;
+    padding-bottom: 10px;
+}
+
+.detail-header i {
+    font-size: 24px;
+    color: #ff9900;
+}
+
+.detail-header h3 {
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.detail-item p {
+    color: #cbd5e0;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ==========================================
+   フッター
+   ========================================== */
+footer {
+    background-color: #0b0b0b;
+    padding: 8px 0 30px 0;
+    border-top: 1px solid #2d3748;
+    text-align: center;
+}
+
+footer .container {
+    padding-top: 60px;
+}
+
+.footer-title {
+    display: inline-block;
+    border-left: none;
+    border-bottom: 3px solid #ff9900;
+    padding-left: 0;
+    padding-bottom: 10px;
+}
+
+.contact-info {
+    margin: 50px auto;
+    background-color: #1a1a1a;
+    padding: 40px;
+    max-width: 600px;
+    border: 1px solid #ff9900;
+    text-align: left;
+}
+
+.contact-info h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.contact-info p {
+    color: #cbd5e0;
+    margin-bottom: 8px;
+}
+
+.contact-info .tel {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 15px 0;
+    font-family: 'Oswald', sans-serif;
+}
+
+.contact-person {
+    font-size: 15px;
+    color: #ffffff;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #2d3748;
+}
+
+.copyright {
+    font-size: 13px;
+    color: #4a5568;
+    margin-top: 40px;
+}
+
+/* ==========================================
+   スマートフォン・タブレット対応（レスポンシブ）
+   ========================================== */
+
+/* 📱 iPad・タブレットサイズ（画面幅 1024px 以下）の調整 */
+@media screen and (max-width: 1024px) {
+    .container {
+        padding: 0 30px; /* 左右の余白を少し広めに */
+    }
+
+    .main-visual h1 {
+        font-size: 38px; /* 文字サイズを少し小さく */
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* カードの幅を調整 */
+    }
+
+    /* 動画自体のスタイル（全画面に広げて、常に中央基準でフィットさせる） */
+  .mv-video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* 黒帯を入れずに画面いっぱいに表示 */
+      transform: translate(-50%, -50%); /* 💡 動画の「中心」を画面の中心に強制的に合わせる設定 */
+      z-index: 1;
+  }
+}
+
+/* 📱 スマートフォンサイズ（画面幅 768px 以下）の調整 */
+@media screen and (max-width: 768px) {
+    /* ヘッダーの調整 */
+    .header-container {
+        padding: 10px 15px;
+        flex-direction: column; /* ロゴとメニューを縦並びに */
+        gap: 10px;
+    }
+
+    .logo-text {
+        font-size: 18px;
+    }
+
+    .logo-img {
+        height: 35px; /* ロゴを少し小ぶりに */
+    }
+
+    nav ul {
+        gap: 20px; /* メニューの幅を狭く */
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .btn-nav {
+        padding: 6px 12px; /* ボタンを押しやすいサイズに小さく */
+    }
+
+    .detail-item {
+        padding: 20px;
+    }
+
+    .detail-header h3 {
+        font-size: 18px;
+    }
+    
+    .detail-item p {
+        font-size: 14px;
+    }
+
+    /* メメインビジュアルの調整 */
+    .main-visual {
+        height: 60vh; /* スマホでは高さを少し抑える */
+        padding-top: 110px; /* 縦並びになったヘッダーに被らないように調整 */
+    }
+
+    .main-visual h1 {
+        font-size: 28px; /* スマホで見やすい文字サイズに */
+        line-height: 1.5;
+    }
+
+    .main-visual p {
+        font-size: 16px;
+    }
+
+    /* コンセプトの調整 */
+    .concept {
+        padding: 60px 0;
+    }
+
+    .concept-lead {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .concept-text {
+        font-size: 15px;
+        text-align: justify; /* 文字の端を揃えて読みやすく */
+    }
+
+    /* 事業内容（SERVICES）の調整 */
+    .services {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2, 1fr); /* スマホでは2列でスッキリ並べる */
+        gap: 12px;
+    }
+
+    .service-card {
+        width: calc(50% - 10px); /* スマホ画面では横に2つ並ぶように調整 */
+        min-width: auto;
+    }
+
+    .service-card i {
+        font-size: 32px;
+        margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+        font-size: 15px;
+    }
+
+    /* 会社概要（COMPANY）の調整 */
+    .about {
+        padding: 60px 0;
+    }
+
+    .profile-table th, .profile-table td {
+        display: block; /* 表を縦並びに変形 */
+        width: 100%;
+        padding: 10px 5px;
+    }
+
+    .profile-table th {
+        border-bottom: none;
+        padding-bottom: 0;
+        font-size: 15px;
+    }
+
+    .profile-table td {
+        font-size: 16px;
+    }
+
+    /* フッター・お問い合わせの調整 */
+    footer .container {
+        padding-top: 40px;
+    }
+
+    .contact-info {
+        margin: 30px auto;
+        padding: 25px 20px;
+    }
+
+    .contact-info h3 {
+        font-size: 18px;
+    }
+
+    .contact-info .tel {
+        font-size: 22px;
+    }
+}
+
+/* 📱 小さなスマホ用（画面幅 480px 以下）の微調整 */
+@media screen and (max-width: 480px) {
+    .service-grid {
+        grid-template-columns: 1fr; /* 画面が小さすぎる場合は1列に */
+    }
+
+    .service-card {
+        width: 100%; /* 小さなスマホでは1カラムに */
+    }
+}
