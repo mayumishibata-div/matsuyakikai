@@ -426,34 +426,32 @@ footer .container {
 /* ==========================================
    連絡先エリア（TEL・FAX・MAIL）のホバー演出
    ========================================== */
-/* 💡 TEL、FAX、MAILの行全体を、マウスが乗ったら優しく光らせる設定 */
-.contact-info p.tel, 
-.contact-info p.fax, 
-.contact-info p.email {
-    transition: color 0.3s ease; /* 0.3秒かけてフワッと色を変えるおまじない */
-}
+/* ==========================================
+   連絡先エリア（TEL・FAX・MAIL）GitHub完全対応版
+   ========================================== */
 
-/* 💡 マウスが乗った（hover）ときにプロフェッショナルオレンジにする */
+/* 💡 通常時：すべての文字（リンクも含む）を強制的に「白」にし、下線を消します */
+.contact-info p,
 .contact-info p.tel, 
 .contact-info p.tel a,
 .contact-info p.fax, 
 .contact-info p.email,
 .contact-info p.email a {
-    color: #ffffff !important; /* 強制的に白にします */
-    text-decoration: none !important; /* 下線を消します */
-    transition: color 0.3s ease;
+    color: #ffffff !important; /* 青色を完全に打ち消して白にします */
+    text-decoration: none !important; /* 青いアンダーラインを消し去ります */
+    transition: color 0.3s ease !important;
 }
 
-/* 💡 マウスが乗った（hover）ときに、数字も含めて全部オレンジにする設定 */
+/* 💡 ホバー時：マウスが乗った行・リンクをすべてプロフェッショナルオレンジにします */
 .contact-info p.tel:hover, 
 .contact-info p.tel a:hover,
 .contact-info p.fax:hover, 
 .contact-info p.email:hover,
 .contact-info p.email a:hover {
-    color: #ff9900 !important; /* 強制的にプロフェッショナルオレンジにします */
+    color: #ff9900 !important; /* 松谷機械様のテーマオレンジ */
+    text-decoration: none !important; /* ホバー時も下線は出さない */
     cursor: default;
 }
-
 /* 💡 メールアドレスのリンク文字も白のまま連動させます */
 .contact-info p.email a {
     color: #ffffff;
