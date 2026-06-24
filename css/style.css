@@ -684,4 +684,17 @@ footer .container {
     .service-card {
         width: 100%; /* 小さなスマホでは1カラムに */
     }
+
+        /* iPhoneの自動リンク化を完全に無効化して白にする */
+    .contact-info p.fax .fax-number,
+    .contact-info p.fax a,
+    .contact-info p.fax span {
+        color: #ffffff !important;
+        text-decoration: none !important;
+    }
+
+    /* ホバーした時は他の項目と同じくオレンジに */
+    .contact-info p.fax:hover .fax-number {
+        color: #ff9900 !important;
+    }
 }
