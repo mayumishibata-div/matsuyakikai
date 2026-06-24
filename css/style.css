@@ -435,6 +435,7 @@ footer .container {
 .contact-info p.tel, 
 .contact-info p.tel a,
 .contact-info p.fax, 
+.contact-info p.fax a
 .contact-info p.email,
 .contact-info p.email a {
     color: #ffffff !important; /* 青色を完全に打ち消して白にします */
@@ -445,7 +446,8 @@ footer .container {
 /* 💡 ホバー時：マウスが乗った行・リンクをすべてプロフェッショナルオレンジにします */
 .contact-info p.tel:hover, 
 .contact-info p.tel a:hover,
-.contact-info p.fax:hover, 
+.contact-info p.fax:hover,
+.contact-info p.fax a:hover, 
 .contact-info p.email:hover,
 .contact-info p.email a:hover {
     color: #ff9900 !important; /* 松谷機械様のテーマオレンジ */
